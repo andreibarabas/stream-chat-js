@@ -1464,10 +1464,10 @@ export class StreamChat<StreamChatGenerics extends ExtendableGenerics = DefaultG
       c.initialized = true;
 
       if (skipInitialization === undefined) {
-        c._initializeState(channelState);
+        c._initializeState(channelState, 'latest');
       } else if (!skipInitialization.includes(channelState.channel.id)) {
         c.state.clearMessages();
-        c._initializeState(channelState);
+        c._initializeState(channelState, 'latest');
       }
 
       channels.push(c);
